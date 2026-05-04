@@ -1,5 +1,9 @@
 # Changelog
 
+## \[0.56.0]
+
+- [`9d0a9fe`](https://github.com/tauri-apps/wry/commit/9d0a9fe31321797b2fb4dd83e01408df9d7fedcc) ([#1712](https://github.com/tauri-apps/wry/pull/1712)) On Windows, Add `WebViewExtWindows::hwnd` getter to access the child HWND containing the webview.
+
 ## \[0.55.1]
 
 - [`3860359`](https://github.com/tauri-apps/wry/commit/3860359e3dc75260fb9865f7a8eae00a9ec4733d) ([#1721](https://github.com/tauri-apps/wry/pull/1721) by [@lucasfernog](https://github.com/tauri-apps/wry/../../lucasfernog)) Tweak ProGuard rules to keep the getId required activity method.
