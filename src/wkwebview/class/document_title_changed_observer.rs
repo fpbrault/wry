@@ -28,7 +28,7 @@ declare_class!(
   unsafe impl ClassType for DocumentTitleChangedObserver {
     type Super = NSObject;
     type Mutability = InteriorMutable;
-    const NAME: &'static str = "DocumentTitleChangedObserver";
+    const NAME: &'static str = concat!(env!("WRY_OBJC_CLASS_NAME_PREFIX", ""), "DocumentTitleChangedObserver");
   }
 
   impl DeclaredClass for DocumentTitleChangedObserver {

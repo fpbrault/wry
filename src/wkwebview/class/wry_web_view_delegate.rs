@@ -28,7 +28,7 @@ declare_class!(
   unsafe impl ClassType for WryWebViewDelegate {
     type Super = NSObject;
     type Mutability = MainThreadOnly;
-    const NAME: &'static str = "WryWebViewDelegate";
+    const NAME: &'static str = concat!(env!("WRY_OBJC_CLASS_NAME_PREFIX", ""), "WryWebViewDelegate");
   }
 
   impl DeclaredClass for WryWebViewDelegate {

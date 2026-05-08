@@ -40,7 +40,7 @@ declare_class!(
   unsafe impl ClassType for WryWebView {
     type Super = WKWebView;
     type Mutability = MainThreadOnly;
-    const NAME: &'static str = "WryWebView";
+    const NAME: &'static str = concat!(env!("WRY_OBJC_CLASS_NAME_PREFIX", ""), "WryWebView");
   }
 
   impl DeclaredClass for WryWebView {

@@ -6,6 +6,14 @@ fn main() {
   let target_os = std::env::var("CARGO_CFG_TARGET_OS").unwrap_or_default();
   if target_os == "macos" || target_os == "ios" {
     println!("cargo:rustc-link-lib=framework=WebKit");
+
+    // Forward WRY_OBJC_CLASS_PREFIX as a compile-time env var so that each
+    // plugin format can register its own uniquely-named ObjC classes.
+    // When two formats (e.g. VST3 + AUv2) are loaded in the same host process
+    // they must not share ObjC class names or the second load will panic.
+    let prefix = std::env::var("WRY_OBJC_CLASS_PREFIX").unwrap_or_default();
+    println!("cargo:rustc-env=WRY_OBJC_CLASS_NAME_PREFIX={prefix}");
+    println!("cargo:rerun-if-env-changed=WRY_OBJC_CLASS_PREFIX");
   }
 
   if target_os == "android" {

@@ -26,7 +26,7 @@ declare_class!(
   unsafe impl ClassType for WryDownloadDelegate {
     type Super = NSObject;
     type Mutability = MainThreadOnly;
-    const NAME: &'static str = "WryDownloadDelegate";
+    const NAME: &'static str = concat!(env!("WRY_OBJC_CLASS_NAME_PREFIX", ""), "WryDownloadDelegate");
   }
 
   impl DeclaredClass for WryDownloadDelegate {
